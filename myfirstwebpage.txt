@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms</title>
+  </head>
+  <body style="background-color:cyan;">
+    <h1>My First Form</h1>
+    <h4>A form about things and stuff</h4>
+    <hr>
+    <form name="myForm" action="#">
+      NAME: <input type="text" name="name" />
+      <br>
+      PHONE: <input type="text" name="phone" />
+      <br>
+      AGE: <select name="age">
+        <option value="under 25">Small child</option>
+        <option value="25-50">Time of my life</option>
+        <option value="51-75">Holy crap, I'm old</option>
+        <option value="over 75">One foot in grave</option>
+      </select>
+      <br>
+      <ul>
+      <li><font color= "purple"> One Thing </font></li>
+      <li><font color= "orange">Another Thing</font></li>
+      <li><font color= "red">That Other Thing</font></li>
+      <li><font color= "teal">The Last Thing</font></li></ul>
+    </ul>
+      <input type="submit" />
+      <br>
+      <a href="http://www.mywebroom-blog.com/wp-content/uploads/2014/11/if-not-for-sits-why-is-it-made-of-warm.jpg">Kitty Time!</a>
+      <br>
+      <img src="http://images.huffingtonpost.com/2014-02-20-ScreenShot20140220at7.51.06AM.png" style="width:500px;height:450px;">
+    </form>
+  </body>
+</html>
