@@ -1,0 +1,191 @@
+Creating Data:
+
+INSERT INTO `students`.`teacher`
+(`first_name`,
+`last_name`,
+`age`,
+`salary`)
+VALUES
+('Amy', 'Spencer', 31, 62000.50),
+('Martin', 'Kerrigan', 36, 58000.75 ),
+('Sarah', 'Mead', 29, 48000.25);
+
+SELECT * FROM teacher
+
+
+
+INSERT INTO `students`.`class`
+(`name`,
+`description`,
+`teacher_id`)
+VALUES
+('Math 6', 'intro to algebra', 1),
+('Math 7', 'intro to geometry', 1),
+('Resource', 'learning study skills', 2),
+('Social Studies 8', 'intro to government', 2),
+('Reading', 'learning to read chapter books', 3),
+('English 8', '8th grade reading standards', 3);
+
+SELECT * FROM class
+
+
+
+
+INSERT INTO `students`.`student`
+(`first_name`,
+`last_name`,
+`grade`,
+`gpa`)
+VALUES
+('Jazzmen', 'Shepard', 8, 3.54),
+('Joey', 'Aridod', 6, 2.31),
+('Margo', 'Hopkins', 8, 2.68),
+('Dora', 'Explorer', 7, 3.82),
+('Jonathan', 'Quiggly', 8, 2.98),
+('Leeloo', 'Blunt', 8, 3.42),
+('Molly Jo', 'Blunt', 6, 3.26),
+('Walter', 'Valle', 7, 2.85),
+('Maxwell', 'Wallace', 6, 1.62),
+('Ever', 'Rivera', 7, 3.04);
+
+SELECT * FROM students
+
+
+
+
+INSERT INTO `students`.`class_student`
+(`class_id`,
+`student_id`)
+VALUES
+(1,1),
+(6,1),
+(1,2),
+(3,2),
+(2,3),
+(6,3),
+(1,4),
+(4,4),
+(5,5),
+(2,5),
+(3,6),
+(1,6),
+(6,7),
+(5,7),
+(2,8),
+(1,8),
+(6,9),
+(4,9),
+(1,10),
+(5,10);
+SELECT * FROM students.class_student;
+
+
+
+
+Query the Data:
+
+
+
+SELECT `teacher`.`teacher_id`,
+    `teacher`.`first_name`,
+    `teacher`.`last_name`,
+    `teacher`.`age`,
+    `teacher`.`salary`
+FROM `students`.`teacher`;
+
+
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`,
+    `class`.`teacher_id`
+FROM `students`.`class`;
+
+
+SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `students`.`student`;
+
+
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`
+    
+FROM `students`.`class`
+WHERE teacher_id LIKE 1;
+
+
+
+SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `students`.`class_student`
+WHERE class_id LIKE 1;
+
+
+
+
+SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `students`.`class_student`
+WHERE student_id LIKE 1;
+
+
+
+
+SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `students`.`student`
+WHERE first_name LIKE 'A%';
+
+
+
+
+Update Data:
+
+
+
+
+UPDATE `students`.`teacher`
+SET
+
+`first_name` = 'Superman'
+
+WHERE `teacher_id` = 1;
+
+SELECT * FROM students.teacher;
+
+
+
+UPDATE `students`.`class`
+SET
+
+`name` = 'Underwater Basket Weaving'
+
+WHERE `class_id` = 1;
+SELECT * FROM students.class;
+
+
+
+UPDATE `students`.`student`
+SET
+
+`first_name` = 'Wonder Woman'
+
+WHERE `student_id` = 1;
+SELECT * FROM students.student;
+
+
+
+Delete Data:
+
+
+DELETE FROM `students`.`student`
+WHERE student_id = 10;
+SELECT * FROM students.student;
